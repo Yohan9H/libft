@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 18:22:23 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/03/25 18:59:58 by yohan.h          ###   ########.fr       */
+/*   Created: 2024/03/25 18:47:13 by yohan.h           #+#    #+#             */
+/*   Updated: 2024/03/25 19:02:38 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	char	cpy_c;
 	int		i;
@@ -20,10 +21,13 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	cpy_c = (char)c;
 	while (s[i])
+		i++;
+	i--;
+	while (s[i])
 	{
 		if (s[i] == cpy_c)
 			return ((char *)&s[i]);
-		i++;
+		i--;
 	}
 	if (cpy_c == '\0' && !s[i])
 		return ((char *)&s[i]);
@@ -34,9 +38,9 @@ char	*ft_strchr(const char *s, int c)
 #include <stdio.h>
 int	main()
 {
-	const char	s[] = "Salut";
+	const char	s[] = "Salutloo";
 	char		c = 'l';
 
-	printf("My function   : %s\n", ft_strchr(s, (int)c));
-	printf("Reel function : %s\n", strchr(s, (int)c));
+	printf("My function   : %s\n", ft_strrchr(s, (int)c));
+	printf("Reel function : %s\n", strrchr(s, (int)c));
 }*/
