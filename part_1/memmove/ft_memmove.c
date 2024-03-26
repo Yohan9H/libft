@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memmove.c                                          :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yohan.H <yhurtebize58@gmail.com>           +#+  +:+       +#+        */
+/*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:39:41 by Yohan.H           #+#    #+#             */
-/*   Updated: 2024/03/22 11:39:42 by Yohan.H          ###   ########.fr       */
+/*   Updated: 2024/03/26 16:05:56 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	return (dest);
 }
 
-#include <string.h>
+/*#include <string.h>
 #include <stdio.h>
 int		main()
 {
@@ -72,4 +72,4 @@ int		main()
 
 	memmove(dest_r, src_r, len_r); // Ne fonctionne pas
 	printf("Reel function : %s\n", dest_r);
-}
+}*/
