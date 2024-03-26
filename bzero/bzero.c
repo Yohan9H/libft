@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Yohan.H <yhurtebize58@gmail.com>           +#+  +:+       +#+        */
+/*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 13:49:36 by Yohan.H           #+#    #+#             */
-/*   Updated: 2024/03/20 14:07:08 by Yohan.H          ###   ########.fr       */
+/*   Updated: 2024/03/26 11:44:49 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*cpy_s;
-	size_t		i;
+	size_t			i;
 
 	cpy_s = (unsigned char *)s;
 	i = 0;
