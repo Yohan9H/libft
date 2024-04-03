@@ -6,7 +6,7 @@
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 16:43:18 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/04/02 19:57:26 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/04/03 18:04:06 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,35 +44,37 @@ int	len_split(char const *s, char c, size_t *i)
 	return (j);
 }
 
-void	split_cpy(char const *s, char *str, char c)
+void	split_cpy(char const *s, char *str, char c, size_t *o)
 {
 	size_t	i;
-	size_t	o;
 
 	i = 0;
-	o = 0;
-	while (s[o] != c)
+	while (s[*o] != c && s[*o])
 	{
-		str[i] = s[o];
+		str[i] = s[*o];
+		*o = *o + 1;
 		i++;
-		o++;
 	}
+	if (s[*o])
+		*o = *o + 1;
 	str[i] = '\0';
 }
 
-int		split_dup(char const *s, char **str, char c, size_t *ct_word)
+int	split_dup(char const *s, char **str, char c, size_t *ct_word)
 {
 	size_t	k;
 	size_t	svg;
+	size_t	o;
 
 	k = 0;
 	svg = 0;
-	while (k < *ct_word - 1)
+	o = 0;
+	while (k < *ct_word)
 	{
 		str[k] = (char *)malloc(len_split(s, c, &svg) * sizeof(char));
 		if (!str[k])
 			return (1);
-		split_cpy(s, str[k], c);
+		split_cpy(s, str[k], c, &o);
 		k++;
 	}
 	str[k] = NULL;
@@ -93,21 +95,21 @@ char	**ft_split(char const *s, char c)
 	return (str);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int	main()
 {
 	char const	*s = "salut-mon-pote";
-	char		c = 'c';
+	char		c = '-';
 	char		**str;
 	size_t		i = 0;
 
 	str = ft_split(s, c);
-	printf("My function : ");
+	printf("My function :\n");
 	while (str[i])
 	{
-		printf("%s ", str[i]);
+		printf("%s\n", str[i]);
 		free(str[i]);
 		i++;
 	}
 	free(str);
-}
+}*/
