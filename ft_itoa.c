@@ -6,7 +6,7 @@
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 18:08:10 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/04/03 19:43:41 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/04/15 12:14:49 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ void	ft_cpy(char *str, int i, int sgn, int n)
 
 	svg = i;
 	i--;
-	if (sign > 0)
+	if (sgn > 0)
 	{
 		str[0] = '-';
 		i++;
 	}
-	while ((svg + sign) > sign)
+	while ((svg + sgn) > sgn)
 	{
 		str[i] = (n % 10) + '0';
 		n /= 10;
