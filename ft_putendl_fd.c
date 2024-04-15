@@ -6,13 +6,13 @@
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 23:05:54 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/04/05 23:07:57 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/04/15 11:59:23 by yohan.h          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	size_t	i;
 
