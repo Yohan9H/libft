@@ -6,7 +6,7 @@
 #    By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/12 15:45:29 by yohan.h           #+#    #+#              #
-#    Updated: 2024/04/15 12:32:13 by yohan.h          ###   ########.fr        #
+#    Updated: 2024/04/16 23:23:51 by yohan.h          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,4 +66,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all maj clean fclean re
+.PHONY: all clean fclean re
