@@ -36,24 +36,25 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		str[i] = (*f)(i, s[i]);
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }
 
-/*char	f(unsigned int i, char c)
-{
-	(void)i;
-	c -= 32;
-	return (c);
-}
+// char	f(unsigned int i, char c)
+// {
+// 	(void)i;
+// 	c -= 32;
+// 	return (c);
+// }
 
-#include <stdio.h>
-int	main()
-{
-	char const	*s = "salut";
-	char		*str;
+// #include <stdio.h>
+// int	main()
+// {
+// 	char const	*s = "salut";
+// 	char		*str;
 
-	printf("Before : %s\n", s);
-	printf("After  : %s\n", str = ft_strmapi(s, f));
-	free(str);
-	return (0);
-}*/ 
+// 	printf("Before : %s\n", s);
+// 	printf("After  : %s\n", str = ft_strmapi(s, f));
+// 	free(str);
+// 	return (0);
+// }

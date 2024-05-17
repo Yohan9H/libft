@@ -12,28 +12,18 @@
 
 #include "libft.h"
 
-size_t	ft_strlen_cat(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t destsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	len_dst;
 	size_t	res;
 
 	i = 0;
-	len_dst = ft_strlen_cat(dst);
-	res = len_dst + ft_strlen_cat(src);
-	if (len_dst >= destsize)
-		return (res);
-	while (i < destsize - 1 && src[i])
+	len_dst = ft_strlen(dst);
+	res = len_dst + ft_strlen(src);
+	if (len_dst >= size || size == 0)
+		return (size + ft_strlen(src));
+	while (len_dst + i < size - 1 && src[i])
 	{
 		dst[len_dst + i] = src[i];
 		i++;
@@ -42,25 +32,25 @@ size_t	ft_strlcat(char *dst, const char *src, size_t destsize)
 	return (res);
 }
 
-/*#include <string.h>
-#include <stdio.h>
-int	main()
-{
-	// suffisament grand ok (ex : 45)
-	//
-	char		dst[10] = "salut";
-	const char	*src = "-mon-gars";
-	size_t		dstlen = sizeof(dst);
+// #include <bsd/string.h>
+// #include <stdio.h>
+// #define NB 2
+// #define LEN 18
+// int	main()
+// {
+// 	char		dst[NB] = "";
+// 	const char	*src = "salut";
+// 	size_t		dstlen = LEN;
 
-	char		dst_r[10] = "salut";
-	const char	*src_r = "-mon-gars";
-	size_t		dstlen_r = sizeof(dst_r);
+// 	char		dst_r[NB] = "";
+// 	const char	*src_r = "salut";
+// 	size_t		dstlen_r = LEN;
 
-	printf("My function   : %lu\n", ft_strlcat(dst, src, dstlen));
-	printf("dst   : %s\n", dst);
-	printf("src   : %s\n----------\n", src);
-	printf("Reel function : %lu\n", strlcat(dst_r, src_r, dstlen_r));
-	printf("dst_r : %s\n", dst_r);
-	printf("src_r : %s\n", src_r);
-	return (0);
-}*/
+// 	printf("My function   : %zu\n", ft_strlcat(dst, src, dstlen));
+// 	printf("dst   : %s\n", dst);
+// 	printf("src   : %s\n----------\n", src);
+// 	printf("Reel function : %zu\n", strlcat(dst_r, src_r, dstlen_r));
+// 	printf("dst_r : %s\n", dst_r);
+// 	printf("src_r : %s\n", src_r);
+// 	return (0);
+// }

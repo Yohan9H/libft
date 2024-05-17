@@ -28,16 +28,18 @@ char	*ft_strrchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i--;
 	}
+	if (cpy_c == '\0' && !s[i])
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
-/*#include <string.h>
-#include <stdio.h>
-int	main()
-{
-	const char	s[] = "Salut";
-	char		c = 'l';
+// #include <string.h>
+// #include <stdio.h>
+// int	main()
+// {
+// 	const char	s[] = "Salut";
+// 	char		c = '\0';
 
-	printf("My function   : %s\n", ft_strrchr(s, (int)c));
-	printf("Reel function : %s\n", strrchr(s, (int)c));
-}*/
+// 	printf("My function   : %s\n", ft_strrchr(s, (int)c));
+// 	printf("Reel function : %s\n", strrchr(s, (int)c));
+// }
