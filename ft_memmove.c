@@ -20,9 +20,10 @@ int	ft_verif_mem(unsigned char *dest, const unsigned char *src)
 		return (0);
 }
 
+// Ne fonction pas quand src == " " (len -= 1)
 void	ft_mem_true(unsigned char *dest, const unsigned char *src, size_t len)
 {
-	len -= 1; // Ne fonction pas quand src == " "
+	len -= 1;
 	while (len > 0)
 	{
 		dest[len] = src[len];

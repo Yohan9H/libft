@@ -6,7 +6,7 @@
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 23:35:45 by Yohan.H           #+#    #+#             */
-/*   Updated: 2024/04/15 12:15:40 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/05/17 16:13:29 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
 	unsigned char	*cpy_dest;
 	unsigned char	*cpy_src;
-	size_t          i;
+	size_t			i;
 
 	cpy_dest = (unsigned char *)dest;
 	cpy_src = (unsigned char *)src;
