@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	trim_n(char *str, size_t lgt, char const *s1, char const *set)
+void	trim_n(char *str, char const *s1, char const *set)
 {
 	size_t	k;
 	size_t	j;
@@ -56,7 +56,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		lgt++;
 	}
 	str = (char *)malloc((ft_strlen(s1) - lgt + 1) * sizeof(char));
-	trim_n(str, lgt, s1, set);
+	trim_n(str, s1, set);
 	return (str);
 }
 
