@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   calloc.c                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 15:08:18 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/03/26 15:41:40 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/05/16 10:47:05 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
+#include "libft.h"
 
 void	c_bzero(void *s, size_t n)
 {
@@ -27,14 +26,14 @@ void	c_bzero(void *s, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*s;
 
-	s = (void *)malloc(count * size);
+	s = (void *)malloc(nmemb * size);
 	if (!s)
 		return (NULL);
-	c_bzero(s, count);
+	c_bzero(s, nmemb);
 	return (s);
 }
 

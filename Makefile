@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I.
 LIBS = libft.h
 
 SRCS = \
@@ -49,7 +49,7 @@ SRCS = \
 	ft_strtrim.c \
 	ft_substr.c \
 	ft_tolower.c \
-	ft_toupper.c \
+	ft_toupper.c 
 
 OBJS = $(SRCS:.c=.o)
 

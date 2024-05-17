@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-// function too long
+#include "libft.h"
+
 size_t	boucle(const char *str, const char *nd, size_t *i)
 {
 	size_t	k;
-	ssize_t	tmp;
+	size_t	tmp;
 
 	k = 0;
 	tmp = *i;
@@ -51,15 +51,15 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	return (NULL);
 }
 
-/*#include <string.h>
-#include <stdio.h>
-int	main()
-{
-	const char	s1[] = " ";
-	const char 	s2[] = " ";
-	size_t		len = 10;
+// #include <stdio.h>
+// #include <bsd/string.h>
+// int	main()
+// {
+// 	const char	s1[] = "Salutalik";
+// 	const char 	s2[] = "ali";
+// 	size_t		len = 10;
 
-	printf("My function   : %s\n", ft_strnstr(s1, s2, len));
-	printf("Reel function : %s\n", strnstr(s1, s2, len));
-	return (0);
-}*/
+// 	printf("My function   : %s\n", ft_strnstr(s1, s2, len));
+// 	printf("Reel function : %s\n", strnstr(s1, s2, len));
+// 	return (0);
+// }

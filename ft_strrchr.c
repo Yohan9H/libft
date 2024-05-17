@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -23,14 +22,12 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i])
 		i++;
 	i--;
-	while (s[i])
+	while (i >= 0)
 	{
 		if (s[i] == cpy_c)
 			return ((char *)&s[i]);
 		i--;
 	}
-	if (cpy_c == '\0' && !s[i])
-		return ((char *)&s[i]);
 	return (NULL);
 }
 
@@ -38,7 +35,7 @@ char	*ft_strrchr(const char *s, int c)
 #include <stdio.h>
 int	main()
 {
-	const char	s[] = "Salutloo";
+	const char	s[] = "Salut";
 	char		c = 'l';
 
 	printf("My function   : %s\n", ft_strrchr(s, (int)c));
