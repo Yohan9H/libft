@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 18:22:23 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/03/25 18:59:58 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/05/24 13:58:24 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)&s[i]);
 		i++;
 	}
-	if (cpy_c == '\0' && !s[i])
+	if (cpy_c == '\0')
 		return ((char *)&s[i]);
 	return (NULL);
 }
 
-// #include <string.h>
-// #include <stdio.h>
-// int	main()
-// {
-// 	const char	s[] = "salut";
-// 	char		c = '\0';
+/*#include <string.h>
+#include <stdio.h>
+int	main()
+{
+ 	const char	s[] = "salut";
+ 	char		c = '\0';
 
-// 	printf("My function   : %s\n", ft_strchr(s, (int)c));
-// 	printf("Reel function : %s\n", strchr(s, (int)c));
-// }
+ 	printf("My function   : %s\n", ft_strchr(s, (int)c));
+ 	printf("Reel function : %s\n", strchr(s, (int)c));
+}*/

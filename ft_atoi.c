@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	verif_signe(const char *str, size_t *i)
+static int	verif_signe(const char *str, size_t *i)
 {
 	int	sgn;
 

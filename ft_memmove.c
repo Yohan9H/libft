@@ -6,28 +6,26 @@
 /*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:39:41 by Yohan.H           #+#    #+#             */
-/*   Updated: 2024/03/26 16:05:56 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/05/24 12:36:08 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_verif_mem(unsigned char *dest, const unsigned char *src)
+static int	ft_verif_mem(unsigned char *dest, const unsigned char *src)
 {
-	if (src <= dest)
+	if (src < dest)
 		return (1);
 	else
 		return (0);
 }
 
-// Ne fonction pas quand src == " " (len -= 1)
-void	ft_mem_true(unsigned char *dest, const unsigned char *src, size_t len)
+static void	ft_mem_true(unsigned char *dst, const unsigned char *src, size_t l)
 {
-	len -= 1;
-	while (len > 0)
+	while (l > 0)
 	{
-		dest[len] = src[len];
-		len--;
+		dst[l - 1] = src[l - 1];
+		l--;
 	}
 }
 
@@ -37,13 +35,14 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 	const unsigned char	*cpy_src;
 	unsigned int		i;
 
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	cpy_dest = (unsigned char *)dest;
 	cpy_src = (const unsigned char *)src;
 	i = 0;
 	if (ft_verif_mem(cpy_dest, cpy_src) == 1)
 	{
 		ft_mem_true(cpy_dest, cpy_src, len);
-		return (dest);
 	}
 	else
 	{
@@ -60,17 +59,17 @@ void	*ft_memmove(void *dest, const void *src, size_t len)
 #include <stdio.h>
 int		main()
 {
-	char	src[] = " ";
-	char	dest[] = "Yo mon gars";
-	size_t	len = sizeof(src);
+	char	src[] = {65, 66, 67, 68, 69, 0, 45};
+	//char	dest[] = "Yo mon gars";
+	size_t	len = 2;
 
-	char	src_r[] = "Salut mon pote";
-	char	dest_r[] = "Yo gars";
-	size_t	len_r = sizeof(src_r);
+	char	src_r[] = {65, 66, 67, 68, 69, 0, 45};
+	//char	dest_r[] = "Yo gars";
+	size_t	len_r = 2;
 
-	ft_memmove(dest, src, len);
-	printf("My function	  : %s\n", dest);
+	ft_memmove(src + 1, src, len);
+	printf("My function	  : %s\n", src);
 
-	memmove(dest_r, src_r, len_r); // Ne fonctionne pas
-	printf("Reel function : %s\n", dest_r);
+	memmove(src_r + 1, src_r, len_r);
+	printf("Reel function : %s\n", src);
 }*/

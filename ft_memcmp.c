@@ -6,7 +6,7 @@
 /*   By: Yohan.H <yhurtebize58@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 16:17:02 by Yohan.H           #+#    #+#             */
-/*   Updated: 2024/03/22 16:17:04 by Yohan.H          ###   ########.fr       */
+/*   Updated: 2024/05/20 11:02:02 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		}
 		i++;
 	}
-	return (cpy_s1[i] - cpy_s2[i]);
+	return (0);
 }
 
 /*#include <string.h>
@@ -37,9 +37,9 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 #include <stdio.h>
 int	main()
 {
-	const char	s1[] = "Salut mon pote";
-	const char	s2[] = "Salut mon pote";
-	size_t 		n = sizeof(s1);
+	const char	s1[] = {-128, 0, 127, 0};
+	const char	s2[] = {-128, 0, 127, 0};
+	size_t 		n = 4;
 	int			res = ft_memcmp(s1, s2, n);
 	int			res_r = memcmp(s1, s2, n);
 

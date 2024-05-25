@@ -15,29 +15,33 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char			*str;
-	unsigned int	i;
+	size_t			len_s;
+	size_t			len_d;
 
-	i = 0;
-	if (start + len > ft_strlen(s))
+	len_s = ft_strlen(s);
+	if (!s)
 		return (NULL);
-	str = (char *)malloc(len + 1 * sizeof(char));
+	if (start >= len_s)
+		return (ft_strdup(""));
+	if (len_s - start > len)
+		len_d = len;
+	else
+		len_d = len_s - start;
+	str = (char *)malloc(len_d + 1 * sizeof(char));
 	if (!str)
 		return (NULL);
-	while (i < len && s[start + i])
-	{
-		str[i] = s[start + i];
-		i++;
-	}
-	str[start + i] = '\0';
+	ft_strlcpy(str, s + start, len_d + 1);
 	return (str);
 }
 
 // #include <stdio.h>
+// #include <string.h>
 // int	main()
 // {
-// 	char			*s = "Salut-mon-pote";
-// 	unsigned int	start = 0;
-// 	size_t			len = 15;
+// 	char			*s = "0123456789";
+// 	//char			*str = strdup("1");
+// 	unsigned int	start = 9;
+// 	size_t			len = 10;
 // 	char			*res;
 
 // 	printf("My function : %s\n", res = ft_substr(s, start, len));

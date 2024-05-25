@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strnstr.c                                          :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yohan.h <yohan.h@student.42.fr>            +#+  +:+       +#+        */
+/*   By: yohurteb <yohurteb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 19:43:53 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/03/25 20:31:25 by yohan.h          ###   ########.fr       */
+/*   Updated: 2024/05/24 14:17:26 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	boucle(const char *str, const char *nd, size_t *i)
+static size_t	verify_needle(const char *str, const char *nd, size_t *i)
 {
 	size_t	k;
 	size_t	tmp;
@@ -32,16 +32,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	k;
+	size_t	save_len;
 
 	i = 0;
 	k = 0;
+	save_len = len;
 	if (!needle[i])
 		return ((char *)&haystack[i]);
 	while (len > 0 && haystack[i])
 	{
 		if (haystack[i] == needle[0])
 		{
-			k = boucle(haystack, needle, &i);
+			k = verify_needle(haystack, needle, &i);
+			if (i + k > save_len)
+				return (NULL);
 			if (!needle[k])
 				return ((char *)&haystack[i]);
 		}
@@ -55,11 +59,11 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // #include <bsd/string.h>
 // int	main()
 // {
-// 	const char	s1[] = "Salutalik";
-// 	const char 	s2[] = "ali";
-// 	size_t		len = 10;
-
-// 	printf("My function   : %s\n", ft_strnstr(s1, s2, len));
-// 	printf("Reel function : %s\n", strnstr(s1, s2, len));
+// 	const char	haystack[] = "aaabcabcd";
+// 	const char	needle[] = "abcd";
+// 	size_t		len = 9;
+//
+// 	printf("My function   : %s\n", ft_strnstr(haystack, needle, len));
+// 	printf("Reel function : %s\n", strnstr(haystack, needle, len));
 // 	return (0);
 // }

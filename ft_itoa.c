@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	count_digit(int n)
+static int	count_digit(long n)
 {
 	int	dgt;
 
@@ -27,51 +27,56 @@ int	count_digit(int n)
 	return (dgt);
 }
 
-void	ft_cpy(char *str, int i, int sgn, int n)
+static void	ft_cpy(char *str, int digit, int sgn, long n)
 {
-	int	svg;
+	int	svg_dgt;
 
-	svg = i;
-	i--;
+	svg_dgt = digit;
+	digit--;
 	if (sgn > 0)
 	{
 		str[0] = '-';
-		i++;
+		digit++;
 	}
-	while ((svg + sgn) > sgn)
+	while ((svg_dgt + sgn) > sgn)
 	{
-		str[i] = (n % 10) + '0';
+		str[digit] = (n % 10) + '0';
 		n /= 10;
-		i--;
-		svg--;
+		digit--;
+		svg_dgt--;
 	}
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nb)
 {
 	char	*str;
 	int		digit;
 	int		sign;
+	long	n;
 
+	n = (long)nb;
 	sign = 0;
 	if (n < 0)
+	{
 		sign++;
-	if (n < 0)
 		n *= -1;
+	}
 	digit = count_digit(n);
 	str = (char *)malloc((digit + sign + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
 	ft_cpy(str, digit, sign, n);
 	str[digit + sign] = '\0';
 	return (str);
 }
 
-/*#include <stdio.h>
-int	main()
-{
-	char	*str;
-	int	n = -1234;
+// #include <stdio.h>
+// int	main()
+// {
+// 	char	*str;
+// 	int	n = -2147483648;
 
-	printf("My function : %s\n", str = ft_itoa(n));
-	free(str);
-	return (0);
-}*/
+// 	printf("My function : %s\n", str = ft_itoa(n));
+// 	free(str);
+// 	return (0);
+// }
