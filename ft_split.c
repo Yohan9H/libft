@@ -19,6 +19,8 @@ static size_t	ft_count_words(char const *s, char c)
 
 	i = 0;
 	count = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		while (s[i] == c && s[i])
