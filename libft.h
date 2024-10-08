@@ -6,7 +6,7 @@
 /*   By: yohurteb <yohurteb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:23:30 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/10/08 13:44:51 by yohurteb         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:52:40 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ int		ft_toupper(int c);
 void	ft_putchar_fd(char c, int fd);
 
 int		verif_nil(unsigned long nb, char *base, unsigned long size_b);
+
+int		ft_fprintf(const char *format, ...);
 
 typedef struct s_list
 {
