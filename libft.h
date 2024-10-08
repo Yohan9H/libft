@@ -6,7 +6,7 @@
 /*   By: yohurteb <yohurteb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 18:23:30 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/05/23 17:50:02 by yohurteb         ###   ########.fr       */
+/*   Updated: 2024/10/08 13:42:52 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 int		ft_atoi(const char *str);
 
