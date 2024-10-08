@@ -6,11 +6,11 @@
 /*   By: yohurteb <yohurteb@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 18:26:56 by yohan.h           #+#    #+#             */
-/*   Updated: 2024/09/17 17:36:39 by yohurteb         ###   ########.fr       */
+/*   Updated: 2024/10/08 12:19:52 by yohurteb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "libft.h"
 
 static int	ft_putchar_error(char c)
 {
